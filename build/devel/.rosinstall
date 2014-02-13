@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/baram/ros/catkin_ws/src/Rover5/build/devel/setup.sh

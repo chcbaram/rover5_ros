@@ -1,0 +1,21 @@
+<package>
+  <description brief="Rover5">
+
+     Rover5
+
+  </description>
+  <author>Baram</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/Rover5</url>
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+
+  <depend package="ecl_exceptions"/>
+  <depend package="ecl_threads"/>
+  <depend package="ecl_time"/>
+
+</package>
+
+
