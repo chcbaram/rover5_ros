@@ -29,4 +29,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
-rosbuild_add_executable(key_getch src/key_getch/key_getch.cpp)
+
+rosbuild_add_executable(key_getch   src/key_getch/key_getch.cpp)
+rosbuild_add_executable(rover5_node src/rover5_node/rover5_node.cpp)
+

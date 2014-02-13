@@ -54,6 +54,11 @@ int main( int argc, char **argv )
 			key_new = false;
 			key_mutex.unlock();
 		}
+		else
+		{
+			//key_msg.data = 0;
+			//key_pub.publish(key_msg);			
+		}
 
 		ros::spinOnce();
 		loop_rate.sleep();

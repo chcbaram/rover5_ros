@@ -319,6 +319,19 @@ rospack_gensrv/fast:
 .PHONY : rospack_gensrv/fast
 
 #=============================================================================
+# Target rules for targets named rover5_node
+
+# Build rule for target.
+rover5_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rover5_node
+.PHONY : rover5_node
+
+# fast build rule for target.
+rover5_node/fast:
+	$(MAKE) -f CMakeFiles/rover5_node.dir/build.make CMakeFiles/rover5_node.dir/build
+.PHONY : rover5_node/fast
+
+#=============================================================================
 # Target rules for targets named run_tests
 
 # Build rule for target.
@@ -446,6 +459,30 @@ src/key_getch/key_getch.cpp.s:
 	$(MAKE) -f CMakeFiles/key_getch.dir/build.make CMakeFiles/key_getch.dir/src/key_getch/key_getch.cpp.s
 .PHONY : src/key_getch/key_getch.cpp.s
 
+src/rover5_node/rover5_node.o: src/rover5_node/rover5_node.cpp.o
+.PHONY : src/rover5_node/rover5_node.o
+
+# target to build an object file
+src/rover5_node/rover5_node.cpp.o:
+	$(MAKE) -f CMakeFiles/rover5_node.dir/build.make CMakeFiles/rover5_node.dir/src/rover5_node/rover5_node.cpp.o
+.PHONY : src/rover5_node/rover5_node.cpp.o
+
+src/rover5_node/rover5_node.i: src/rover5_node/rover5_node.cpp.i
+.PHONY : src/rover5_node/rover5_node.i
+
+# target to preprocess a source file
+src/rover5_node/rover5_node.cpp.i:
+	$(MAKE) -f CMakeFiles/rover5_node.dir/build.make CMakeFiles/rover5_node.dir/src/rover5_node/rover5_node.cpp.i
+.PHONY : src/rover5_node/rover5_node.cpp.i
+
+src/rover5_node/rover5_node.s: src/rover5_node/rover5_node.cpp.s
+.PHONY : src/rover5_node/rover5_node.s
+
+# target to generate assembly for a file
+src/rover5_node/rover5_node.cpp.s:
+	$(MAKE) -f CMakeFiles/rover5_node.dir/build.make CMakeFiles/rover5_node.dir/src/rover5_node/rover5_node.cpp.s
+.PHONY : src/rover5_node/rover5_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -472,6 +509,7 @@ help:
 	@echo "... rospack_genmsg"
 	@echo "... rospack_genmsg_libexe"
 	@echo "... rospack_gensrv"
+	@echo "... rover5_node"
 	@echo "... run_tests"
 	@echo "... test"
 	@echo "... test-future"
@@ -483,6 +521,9 @@ help:
 	@echo "... src/key_getch/key_getch.o"
 	@echo "... src/key_getch/key_getch.i"
 	@echo "... src/key_getch/key_getch.s"
+	@echo "... src/rover5_node/rover5_node.o"
+	@echo "... src/rover5_node/rover5_node.i"
+	@echo "... src/rover5_node/rover5_node.s"
 .PHONY : help
 
 
