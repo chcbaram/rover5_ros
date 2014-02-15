@@ -42,13 +42,13 @@ void key_getch_callback( const std_msgs::UInt8::ConstPtr &msg )
 			break;
 
 		case 0x44:	// Left
-			Lib_Motor_PwmLeft  = -Speed;
-			Lib_Motor_PwmRight = Speed;			
+			Lib_Motor_PwmLeft  = -Speed*2;
+			Lib_Motor_PwmRight = Speed*2;			
 			break;
 
 		case 0x43:	// Right
-			Lib_Motor_PwmLeft  = Speed;
-			Lib_Motor_PwmRight = -Speed;
+			Lib_Motor_PwmLeft  = Speed*2;
+			Lib_Motor_PwmRight = -Speed*2;
 			break;
 
 		case 0x42:	// Back
