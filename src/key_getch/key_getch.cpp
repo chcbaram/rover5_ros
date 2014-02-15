@@ -26,13 +26,15 @@ int main( int argc, char **argv )
 	ros::Publisher key_pub = n.advertise<std_msgs::UInt8>("key_getch", 1000);
 	
 	ros::Rate loop_rate(10);
+	std_msgs::UInt8 key_msg;	
 	
 	
 	//-- 초기화 
 	//
 	quit_requested = 0;
 	tcgetattr(key_file_descriptor, &original_terminal_state);
-	
+
+
 	key_new = false;
 
 	//-- 키보드 입력 스레드 시작 
@@ -42,7 +44,6 @@ int main( int argc, char **argv )
 	
 	while( ros::ok() )
 	{
-		std_msgs::UInt8 key_msg;
 		
 		key_msg.data = key_getch_data;
 		
@@ -64,15 +65,19 @@ int main( int argc, char **argv )
 		loop_rate.sleep();
 	}	
 
+	key_msg.data = 0;	
+	key_pub.publish(key_msg);
+
 	quit_requested = true;
 	thread.cancel();
 	thread.join();
 
 	tcsetattr(key_file_descriptor, TCSANOW, &original_terminal_state);
-}
 
+}
   
   
+
 
 void Key_InputLoop( void )
 {

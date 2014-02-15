@@ -27,7 +27,8 @@ int Uart_Open( char *Uart_PortNum, int Uart_BaudData )
 	if( Uart_Handle < 0 )
 	{
                 perror( Uart_PortNum );
-                exit( -1 );
+                //exit( -1 );
+                return -1;
 	}
 
 	// 저장한다 현제 시리얼포트 정보를

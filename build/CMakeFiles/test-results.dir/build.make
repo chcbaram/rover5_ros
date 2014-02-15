@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/baram/ros/catkin_ws/src/Rover5
+CMAKE_SOURCE_DIR = /home/baram/ros/catkin_ws/src/rover5_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/baram/ros/catkin_ws/src/Rover5/build
+CMAKE_BINARY_DIR = /home/baram/ros/catkin_ws/src/rover5_ros/build
 
 # Utility rule file for test-results.
 
@@ -43,7 +43,7 @@ CMAKE_BINARY_DIR = /home/baram/ros/catkin_ws/src/Rover5/build
 include CMakeFiles/test-results.dir/progress.make
 
 CMakeFiles/test-results:
-	/opt/ros/hydro/share/rosunit/cmake/../scripts/summarize_results.py --nodeps Rover5
+	/opt/ros/hydro/share/rosunit/cmake/../scripts/summarize_results.py --nodeps rover5_ros
 
 test-results: CMakeFiles/test-results
 test-results: CMakeFiles/test-results.dir/build.make
@@ -58,6 +58,6 @@ CMakeFiles/test-results.dir/clean:
 .PHONY : CMakeFiles/test-results.dir/clean
 
 CMakeFiles/test-results.dir/depend:
-	cd /home/baram/ros/catkin_ws/src/Rover5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/baram/ros/catkin_ws/src/Rover5 /home/baram/ros/catkin_ws/src/Rover5 /home/baram/ros/catkin_ws/src/Rover5/build /home/baram/ros/catkin_ws/src/Rover5/build /home/baram/ros/catkin_ws/src/Rover5/build/CMakeFiles/test-results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/baram/ros/catkin_ws/src/rover5_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/baram/ros/catkin_ws/src/rover5_ros /home/baram/ros/catkin_ws/src/rover5_ros /home/baram/ros/catkin_ws/src/rover5_ros/build /home/baram/ros/catkin_ws/src/rover5_ros/build /home/baram/ros/catkin_ws/src/rover5_ros/build/CMakeFiles/test-results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test-results.dir/depend
 

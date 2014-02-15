@@ -11,6 +11,9 @@
 #include <termios.h>
 #include <time.h>
 
+#include "rover5_ros/rover5_node_msg.h"
+#include "rover5_ros/rover5_node_cmd_pwm.h"
+
 #include "./Main_Lib/Define.h"
 
 #include "./Main_Lib/Uart_Lib.h"
@@ -102,47 +105,21 @@ void Uart_Rxd_Func( char Data )
 
 
 
-char 	key_getch_data;  
 
-
-void key_getch_callback( const std_msgs::UInt8::ConstPtr &msg )
+bool rover5_cmd_pwm( rover5_ros::rover5_node_cmd_pwm::Request &req,
+					 rover5_ros::rover5_node_cmd_pwm::Request &res )
 {
-	ROS_INFO("Key Code : %X", msg->data);
-	
-	int Speed = 30;
 
-
-	switch( msg->data )
-	{
-		case 0x41:	// For
-			Lib_Motor_PwmLeft  = Speed;
-			Lib_Motor_PwmRight = Speed;
-			break;
-
-		case 0x44:	// Left
-			Lib_Motor_PwmLeft  = -Speed;
-			Lib_Motor_PwmRight = Speed;			
-			break;
-
-		case 0x43:	// Right
-			Lib_Motor_PwmLeft  = Speed;
-			Lib_Motor_PwmRight = -Speed;
-			break;
-
-		case 0x42:	// Back
-			Lib_Motor_PwmLeft  = -Speed;
-			Lib_Motor_PwmRight = -Speed;
-			break;
-
-		default:
-			Lib_Motor_PwmLeft  = 0;
-			Lib_Motor_PwmRight = 0;
-			break;
-	}
+	Lib_Motor_PwmLeft  = req.pwm_left;
+	Lib_Motor_PwmRight = req.pwm_right;
 
 	Uart_Printf( "move pwm  %d  %d \n", Lib_Motor_PwmLeft, Lib_Motor_PwmRight);
-	printf( "move pwm  %d  %d \n", Lib_Motor_PwmLeft, Lib_Motor_PwmRight);
+
+	return true;
 }
+
+
+
 
 
 int main( int argc, char **argv )
@@ -152,8 +129,9 @@ int main( int argc, char **argv )
 
 	ros::init(argc, argv, "rover5_node");
 	ros::NodeHandle n;
-	
-	ros::Subscriber sub = n.subscribe<std_msgs::UInt8>("key_getch", 1, key_getch_callback);
+
+	ros::Publisher     pub = n.advertise<rover5_ros::rover5_node_msg>("rover5_node_msg", 1000);
+	ros::ServiceServer srv = n.advertiseService("rover5_node_cmd_pwm", rover5_cmd_pwm); 
 
 	//-- 시리얼 통신 초기화 
 	Uart_Handle_Ptr = Uart_Open( "/dev/ttyUSB0", BAUD_115200 );
@@ -161,14 +139,34 @@ int main( int argc, char **argv )
 	if( Uart_Handle_Ptr < 0 )
 	{
 		printf("Uart Open Failed \n");
-		return 0;
+		//return 0;
+	}
+	else
+	{
+		Uart_Sig_Init( Uart_Handle_Ptr );
+		Uart_Sig_Func_Init( Uart_Handle_Ptr, Uart_Rxd_Func );
 	}
 
-	Uart_Sig_Init( Uart_Handle_Ptr );
-	Uart_Sig_Func_Init( Uart_Handle_Ptr, Uart_Rxd_Func );
+	ros::Rate loop_rate(10);
 
 
-	ros::spin();
+	while( ros::ok() )
+	{
+		rover5_ros::rover5_node_msg msg;
+
+		//-- PWM Info
+		msg.pwm_left  = Lib_Motor_PwmLeft;
+		msg.pwm_right = Lib_Motor_PwmRight;
+
+		//-- Sonic Info
+		msg.sonic_distance_left  = Sonic_Length_Left;
+		msg.sonic_distance_right = Sonic_Length_Right;
+
+		pub.publish(msg);
+
+		ros::spinOnce();
+		loop_rate.sleep();
+	}
 
 	return 0;	
 }

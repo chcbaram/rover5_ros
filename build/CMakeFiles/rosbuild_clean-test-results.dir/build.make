@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/baram/ros/catkin_ws/src/Rover5
+CMAKE_SOURCE_DIR = /home/baram/ros/catkin_ws/src/rover5_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/baram/ros/catkin_ws/src/Rover5/build
+CMAKE_BINARY_DIR = /home/baram/ros/catkin_ws/src/rover5_ros/build
 
 # Utility rule file for rosbuild_clean-test-results.
 
@@ -43,7 +43,7 @@ CMAKE_BINARY_DIR = /home/baram/ros/catkin_ws/src/Rover5/build
 include CMakeFiles/rosbuild_clean-test-results.dir/progress.make
 
 CMakeFiles/rosbuild_clean-test-results:
-	if ! rm -rf /home/baram/ros/catkin_ws/build/test_results/Rover5; then echo WARNING:\ failed\ to\ remove\ test-results\ directory ; fi
+	if ! rm -rf /home/baram/ros/catkin_ws/build/test_results/rover5_ros; then echo WARNING:\ failed\ to\ remove\ test-results\ directory ; fi
 
 rosbuild_clean-test-results: CMakeFiles/rosbuild_clean-test-results
 rosbuild_clean-test-results: CMakeFiles/rosbuild_clean-test-results.dir/build.make
@@ -58,6 +58,6 @@ CMakeFiles/rosbuild_clean-test-results.dir/clean:
 .PHONY : CMakeFiles/rosbuild_clean-test-results.dir/clean
 
 CMakeFiles/rosbuild_clean-test-results.dir/depend:
-	cd /home/baram/ros/catkin_ws/src/Rover5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/baram/ros/catkin_ws/src/Rover5 /home/baram/ros/catkin_ws/src/Rover5 /home/baram/ros/catkin_ws/src/Rover5/build /home/baram/ros/catkin_ws/src/Rover5/build /home/baram/ros/catkin_ws/src/Rover5/build/CMakeFiles/rosbuild_clean-test-results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/baram/ros/catkin_ws/src/rover5_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/baram/ros/catkin_ws/src/rover5_ros /home/baram/ros/catkin_ws/src/rover5_ros /home/baram/ros/catkin_ws/src/rover5_ros/build /home/baram/ros/catkin_ws/src/rover5_ros/build /home/baram/ros/catkin_ws/src/rover5_ros/build/CMakeFiles/rosbuild_clean-test-results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rosbuild_clean-test-results.dir/depend
 

@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/baram/ros/catkin_ws/src/Rover5/src/key_getch/key_getch.cpp
+/home/baram/ros/catkin_ws/src/rover5_ros/src/key_getch/key_getch.cpp
 ros/ros.h
-/home/baram/ros/catkin_ws/src/Rover5/src/key_getch/ros/ros.h
+/home/baram/ros/catkin_ws/src/rover5_ros/src/key_getch/ros/ros.h
 termios.h
 -
 ecl/threads.hpp

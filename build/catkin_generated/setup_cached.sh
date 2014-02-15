@@ -7,13 +7,13 @@
 # new environment variables
 
 # modified environment variables
-export CATKIN_TEST_RESULTS_DIR="/home/baram/ros/catkin_ws/src/Rover5/build/test_results"
-export CMAKE_PREFIX_PATH="/home/baram/ros/catkin_ws/src/Rover5/build/devel:$CMAKE_PREFIX_PATH"
-export CPATH="/home/baram/ros/catkin_ws/src/Rover5/build/devel/include:$CPATH"
-export LD_LIBRARY_PATH="/home/baram/ros/catkin_ws/src/Rover5/build/devel/lib:$LD_LIBRARY_PATH"
-export PATH="/home/baram/ros/catkin_ws/src/Rover5/build/devel/bin:$PATH"
-export PKG_CONFIG_PATH="/home/baram/ros/catkin_ws/src/Rover5/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PYTHONPATH="/home/baram/ros/catkin_ws/src/Rover5/build/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/baram/ros/catkin_ws/src/Rover5/build/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/baram/ros/catkin_ws/src/Rover5:$ROS_PACKAGE_PATH"
-export ROS_TEST_RESULTS_DIR="/home/baram/ros/catkin_ws/src/Rover5/build/test_results"
+export CATKIN_TEST_RESULTS_DIR="/home/baram/ros/catkin_ws/src/rover5_ros/build/test_results"
+export CMAKE_PREFIX_PATH="/home/baram/ros/catkin_ws/src/rover5_ros/build/devel:$CMAKE_PREFIX_PATH"
+export CPATH="/home/baram/ros/catkin_ws/src/rover5_ros/build/devel/include:$CPATH"
+export LD_LIBRARY_PATH="/home/baram/ros/catkin_ws/src/rover5_ros/build/devel/lib:$LD_LIBRARY_PATH"
+export PATH="/home/baram/ros/catkin_ws/src/rover5_ros/build/devel/bin:$PATH"
+export PKG_CONFIG_PATH="/home/baram/ros/catkin_ws/src/rover5_ros/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PYTHONPATH="/home/baram/ros/catkin_ws/src/rover5_ros/build/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/baram/ros/catkin_ws/src/rover5_ros/build/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/baram/ros/catkin_ws/src/rover5_ros:$ROS_PACKAGE_PATH"
+export ROS_TEST_RESULTS_DIR="/home/baram/ros/catkin_ws/src/rover5_ros/build/test_results"
